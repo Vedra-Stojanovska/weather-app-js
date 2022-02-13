@@ -9,14 +9,12 @@ let humidity = document.getElementsByClassName("humidity")[0];
 let wind = document.getElementsByClassName("wind")[0];
 let icon = document.getElementById("icon");
 
-//create a class for every city
-class City {
-  constructor(name, main, weather, wind) {
-    this.name = name;
-    this.main = main;
-    this.weather = weather;
-    this.wind = wind;
-  }
+//constructor function
+function City(name, main, weather, wind) {
+  this.name = name;
+  this.main = main;
+  this.weather = weather;
+  this.wind = wind;
 }
 
 //function to get the API data
@@ -33,7 +31,7 @@ let storeData = (city) => {
 //function to show the data from the API
 let showData = (value) => {
   searchBar.value = "";
-  //populate our objects from the class
+  //populate our newly created object
   let city = new City(value.name, value.main, value.weather, value.wind);
   console.log(city);
   heading.innerHTML = `Weather in ${value.name}`;

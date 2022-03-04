@@ -11,8 +11,7 @@ let icon = document.getElementById("icon");
 let buttonSwitchC = document.getElementById("toggleC");
 let buttonSwitchF = document.getElementById("toggleF");
 
-//constructor function
-
+//creating a class for every city
 class City {
   constructor({ name, main, weather, wind }) {
     this.name = name;
@@ -23,6 +22,7 @@ class City {
   static create(response) {
     return new City(response);
   }
+  //function to show the data
   showData() {
     searchBar.value = "";
     heading.textContent = `Weather in ${this.name}`;
@@ -61,13 +61,11 @@ let storeData = async (city) => {
   ).json();
 };
 
-//function to call the storeData function and later call it with the button
 let weatherAlert = async () => {
   try {
     let value = await storeData(searchBar.value);
     let city = City.create(value);
     city.showData();
-    // return value;
   } catch (err) {
     encounterError();
   }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Weather app</title>
   </head>
   <body>
@@ -12,10 +13,12 @@
       <div class="search">
         <input type="search" name="search" id="search" placeholder="Search" />
         <button id="enter">Enter</button>
+        <button id="toggleC">°C</button>
+        <button id="toggleF">°F</button>
       </div>
       <div class="weather">
         <h2 id="heading"></h2>
-        <h1 id="headingTwo"></h1>
+        <h1 id="temp"></h1>
         <p id="headingThree"></p>
         <div class="desc-container">
           <p class="description"></p>
@@ -25,6 +28,5 @@
         <p class="wind"></p>
       </div>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
